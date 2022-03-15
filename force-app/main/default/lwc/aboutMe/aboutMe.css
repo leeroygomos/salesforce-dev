@@ -6,14 +6,16 @@
 
 .picture{
     display: block;
+    padding-top: 5%;
     margin-left: auto;
     margin-right: auto;
-    width: 25%;
+    width: 20%;
 }
 
 .content{
     width: 40%;
-    margin-top:3%;
+    margin-top:5%;
+    padding-bottom: 15%;
     margin-left: auto;
     margin-right: auto;
     display: block;

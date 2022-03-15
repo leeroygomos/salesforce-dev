@@ -1,7 +1,7 @@
 <template>
     <div class="portfolio">
-        <lightning-layout class="background_img">
-            <lightning-layout-item>
+        <lightning-layout vertical-align="stretch">
+            <lightning-layout-item flexibility="auto, no-grow">
                 <div class="nav">
                     <lightning-vertical-navigation selected-item={initiallySelected} onselect={handleSelect}>
                         <template for:each={navigationData} for:item="section">
@@ -14,7 +14,7 @@
                     </lightning-vertical-navigation>
                 </div>
             </lightning-layout-item>
-            <lightning-layout-item>
+            <lightning-layout-item flexibility="auto, stretch">
                 <div class="content">
                     <template if:true={showAbout}>
                         <c-about-me></c-about-me>
