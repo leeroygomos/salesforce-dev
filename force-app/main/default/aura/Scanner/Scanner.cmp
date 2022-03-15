@@ -1,0 +1,34 @@
+<aura:component implements="force:appHostable" controller="itemList" >
+    
+    <!-- Templates found here: http://www.lightningdesignsystem.com/components -->
+    
+    <lightning:tabset selectedTabId="one">
+        
+        <!-- Borrow Tab -->
+        <lightning:tab label="Borrow" id="one">
+            <div onkeyup="{!c.handleBorrowKeyUp}" id="borrowScanner">
+                <lightning:input
+                    aura:id="borrowItemID"
+                    label="Enter Item ID of item you would like to borrow" 
+                    name="borrowItemID" 
+                    value=""
+                />
+                <button class="slds-button slds-button_brand" onclick="{!c.handleBorrowScan}">Scan</button>
+            </div>
+        </lightning:tab>
+        
+        <!-- Return Tab -->
+        <lightning:tab label="Return" id="two">
+            <div onkeyup="{!c.handleReturnKeyUp}" id="returnScanner">
+                <lightning:input
+                    aura:id="returnItemID"
+                    label="Enter Item ID of item you would like to return" 
+                    name="returnItemID" 
+                    value=""
+                />
+                <button class="slds-button slds-button_brand" onclick="{!c.handleReturnScan}">Scan</button>
+            </div>
+        </lightning:tab>
+        
+    </lightning:tabset>
+</aura:component>

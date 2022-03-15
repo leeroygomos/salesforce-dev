@@ -1,0 +1,77 @@
+<aura:component implements="force:appHostable" controller="itemList">
+    
+    <!-- Templates found here: http://www.lightningdesignsystem.com/components -->
+    
+	<aura:attribute name="Item" type="Item__c[]"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    
+    <!-- Search bar -->
+    <div onkeyup="{!c.handleKeyUp}">
+        <lightning:input
+            aura:id="enter-search"
+            name="enter-search"
+            type="search"
+            value=""
+        />    
+    </div>
+    <br></br>
+    
+    <!-- History table -->
+    <div class="history-table">
+    	<table class="slds-table slds-table_cell-buffer slds-table_bordered" id="item-table">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Ref">Reference Number</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="ID">Item ID</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Item Name">Item Name</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Type">Type</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="User">User</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Date">Date</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <!-- Loop over history and fill table -->
+            <aura:iteration items="{!v.Item}" var="item">
+                
+                <tr class="slds-hint-parent">
+                    <td data-label="Ref">
+                        <a href="{!'https://test-1e3-dev-ed.lightning.force.com/lightning/r/History__c/' + item.Id + '/view'}" tabindex="-1">{!item.Name}</a>
+                    </td>
+                    <td data-label="ID">
+                        <div class="slds-truncate" title="ID">{!item.Item_ID__c}</div>
+                    </td>
+                    <th data-label="Item Name" scope="row">
+                        <div class="slds-truncate" title="Item Name">{!item.Item_Name__c}</div>
+                    </th>
+                    <td data-label="Type">
+                        <div class="slds-truncate" title="Type">{!item.Type__c}</div>
+                    </td>
+                    <td data-label="User">
+                        <div class="slds-truncate" title="User">{!item.User_Name__c}</div>
+                    </td>
+                    <td data-label="Date">
+                        <div class="slds-truncate" title="Date">{!item.Date__c}</div>
+                    </td>
+                </tr>
+            
+            </aura:iteration>
+            
+        </tbody>
+        </table>
+    </div>
+    
+    
+</aura:component>

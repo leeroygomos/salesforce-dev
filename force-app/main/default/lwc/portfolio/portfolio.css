@@ -1,0 +1,30 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+.porfolio { 
+    height: 100%; 
+    width: 100%;
+    margin: 0; 
+    background-color: gray;
+} 
+
+.nav{
+    background-color: lightblue;
+    float: left;
+    color:white;
+    width:max-content;
+    height: 100%;
+    border: 1px solid black;
+    text-align: left;
+    position: relative;
+}
+
+.content{
+    float:right;
+    background-color: rgb(91, 140, 156);
+    margin: 0;
+    height: 100%;
+    width: max-content;
+}

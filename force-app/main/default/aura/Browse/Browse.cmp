@@ -1,0 +1,90 @@
+<aura:component implements="force:appHostable" controller="itemList">
+    
+    <!-- Templates found here: http://www.lightningdesignsystem.com/ -->
+    
+    <!-- Init function and data -->
+    <aura:attribute name="Item" type="Item__c[]"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    
+    <!-- Search bar -->
+    <div onkeyup="{!c.handleKeyUp}">
+        <lightning:input
+            aura:id="enter-search"
+            name="enter-search"
+            type="search"
+            value=""
+        />    
+    </div>
+    <br></br>
+    
+    <!-- Item Table -->
+	<div class="item-table">
+    	<table class="slds-table slds-table_cell-buffer slds-table_bordered" id="item-table">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="ID">ID</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Item Name">Item Name</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Type">Type</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Available">Available</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Borrowed By">Borrowed By</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Borrow">Borrow</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <!-- Loop over Items and fill table -->
+            <aura:iteration items="{!v.Item}" var="item">
+                
+                <tr class="slds-hint-parent">
+                    <td data-label="ID">
+                        <div class="slds-truncate" title="ID">{!item.ID__c}</div>
+                    </td>
+                    <th data-label="Item Name" scope="row">
+                        <div class="slds-truncate" title="Item Name">
+                            <a href="{!'https://test-1e3-dev-ed.lightning.force.com/lightning/r/Item__c/' + item.Id + '/view'}" tabindex="-1">{!item.Name}</a>
+                        </div>
+                    </th>
+                    <td data-label="Type">
+                        <div class="slds-truncate" title="Type">{!item.Type__c}</div>
+                    </td>
+                    <td data-label="Available">
+                        <div class="slds-truncate" title="Available">{!item.Available__c}</div>
+                    </td>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Borrowed By">{!item.User_Name__c}</div>
+                    </th>
+                    <td data-label="Borrow">
+                        
+                        <!-- Add button if item is available -->
+                        <aura:if isTrue="{!item.Available__c == 'Yes'}">
+                            <div class="slds-truncate" title="Borrow" >
+                                <lightning:button class="slds-button slds-button_brand" 
+                                              onclick="{!c.handleBorrow}" 
+                                              value="{!item.ID__c}"
+                                              name="borrow"
+                                              aura:id="borrow">
+                                    Borrow
+                                </lightning:button>
+                            </div>
+                        </aura:if>
+                    </td>
+                </tr>
+            
+            </aura:iteration>
+            
+        </tbody>
+        </table>
+    </div>
+</aura:component>

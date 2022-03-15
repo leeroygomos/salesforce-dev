@@ -1,0 +1,21 @@
+.about{
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
+
+.picture{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+
+.content{
+    width: 40%;
+    margin-top:3%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: large;
+}

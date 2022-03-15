@@ -1,0 +1,38 @@
+<template>
+    <div class="portfolio">
+        <lightning-layout class="background_img">
+            <lightning-layout-item>
+                <div class="nav">
+                    <lightning-vertical-navigation selected-item={initiallySelected} onselect={handleSelect}>
+                        <template for:each={navigationData} for:item="section">
+                            <lightning-vertical-navigation-section key={section.label} label={section.label}>
+                                <template for:each={section.items} for:item="item">
+                                    <lightning-vertical-navigation-item key={item.name} label={item.label} name={item.name}></lightning-vertical-navigation-item>
+                                </template>
+                            </lightning-vertical-navigation-section>
+                        </template>
+                    </lightning-vertical-navigation>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <div class="content">
+                    <template if:true={showAbout}>
+                        <c-about-me></c-about-me>
+                    </template>
+                    <template if:true={showProjects}>
+                        <c-projects></c-projects>
+                    </template>
+                    <template if:true={showExperience}>
+                        <c-experience></c-experience>
+                    </template>
+                    <template if:true={showSkills}>
+                        <c-skills-certifications></c-skills-certifications>
+                    </template>
+                    <template if:true={showContact}>
+                        <c-contact-me></c-contact-me>
+                    </template>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

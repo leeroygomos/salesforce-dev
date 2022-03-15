@@ -1,0 +1,76 @@
+<aura:component implements="force:appHostable" controller="itemList">
+    
+    <aura:attribute name="Item" type="Item__c[]"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    
+    <!-- TESTING DATA RETRIEVAL
+
+    <div class="slds-page-header" role="banner">
+    	<div class="slds-grid">
+        	<div class="slds-col">
+   				[Transactions List...]<br/>
+                <ui:outputText value="{!v.Item[0].Name}" /> 
+            </div>
+        </div>
+    </div>
+
+    -->
+	<div class="test">
+    	<table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Item Name">Item Name</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Total Stock">Total # of Stock</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Available"># Available</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Borrow">Borrow</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="slds-hint-parent">
+                <th data-label="Opportunity Name" scope="row">
+                    <div class="slds-truncate" title="Cloudhub">
+                    	<a href="javascript:void(0);" tabindex="-1">Cloudhub</a>
+                	</div>
+                </th>
+                <td data-label="Account Name">
+                	<div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+                </td>
+                <td data-label="Close Date">
+                	<div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+                </td>
+                <td data-label="Contact">
+                    <div class="slds-truncate" title="jrogers@cloudhub.com">
+                    	<a href="javascript:void(0);" tabindex="-1">jrogers@cloudhub.com</a>
+                    </div>
+                </td>
+            </tr>
+            <tr class="slds-hint-parent">
+                <th data-label="Opportunity Name" scope="row">
+                	<div class="slds-truncate" title="Cloudhub + Anypoint Connectors">
+                		<a href="javascript:void(0);" tabindex="-1">Cloudhub + Anypoint Connectors</a>
+                	</div>
+                </th>
+                <td data-label="Account Name">
+                	<div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+                </td>
+                <td data-label="Close Date">
+                	<div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+                </td>
+                <td data-label="Contact">
+                	<div class="slds-truncate" title="jrogers@cloudhub.com">
+                		<a href="javascript:void(0);" tabindex="-1">jrogers@cloudhub.com</a>
+                	</div>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</aura:component>
