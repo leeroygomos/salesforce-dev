@@ -10,6 +10,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 20%;
+    border-radius: 50%;
 }
 
 .content{
@@ -19,5 +20,5 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
-    font-size: large;
+    font-size: xx-large;
 }

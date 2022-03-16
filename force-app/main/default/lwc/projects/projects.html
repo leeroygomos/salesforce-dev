@@ -1,57 +1,65 @@
 <template>
     <div class="projects">
-        <section id="two">
-            <h1>School Projects</h1>
-            <div class="row">
-                <article class="col-6 col-12-xsmall work-item-2">
-                    <a href="https://github.com/leeroygomos/fitnessbuddy" class="image fit thumb"><img class="images" src={fitnessBuddyImg} alt="" /></a>
-                    <h3>FitnessBuddy</h3>
-                    <p><a href="https://ancient-sierra-47830.herokuapp.com">A fitness web application</a> developed using NodeJS and Heroku.
-                        Key features include finding nearby gyms, nutrition
-                        facts, exercises search for different muscles, and a realtime
-                        chatroom.
-                    </p>
-                </article>
-                <article class="col-6 col-12-xsmall work-item-2">
-                    <a href="https://github.com/leeroygomos/voluntutor" class="image fit thumb"><img class="images" src={voluntutorImg} alt="" /></a>
-                    <h3>Voluntutor</h3>
-                    <p>A tutoring web application which used AWS Elastic Beanstalk for deployment and was developed
-                        using Python with Django as the web framework. It also used Amazon RDS for PostgreSQL as the
-                        database engine and Amazon S3 cloud storage for static files.
-                    </p>
-                </article>
-                <article class="col-6 col-12-xsmall work-item-2">
-                    <a href="https://github.com/leeroygomos/calcapp" class="image fit thumb"><img class="images" src={calcImg} alt="" /></a>
-                    <h3>Calculations App</h3>
-                    <p>A web application that calculates fibonacci, factorial, exponents, quadratic formula, and pythagorean
-                        theorem. It also does numeric conversions between decimal, hexadecimal, and binary. Developed using
-                        Django, C/C++, and Go.
-                    </p>
-                </article>
-                <article class="col-6 col-12-xsmall work-item">
-                    <a href="images/fulls/satsolver.png" class="image fit thumb"><img class="images" src={satSolverImg} alt="" /></a>
-                    <h3>Satisfiability Problem Solver</h3>
-                    <p>A Python program that implements the DPLL algorithm to check
-                        the satisfiability of an expression in Conjunctive Normal Form (CNF).
-                        It may also print a list of true literals if the expression is satisfiable.
-                    </p>
-                </article>
-                <article class="col-6 col-12-xsmall work-item">
-                    <a href="images/fulls/shell.png" class="image fit thumb"><img class="images" src={shellImg} alt="" /></a>
-                    <h3>Basic Linux Shell</h3>
-                    <p>An implementation of the Linux shell using C with additional commands: !n, type, and history.
-                        The commands pwd, exit, and cd were also reimplemented.
-                    </p>
-                </article>
-                <article class="col-6 col-12-xsmall work-item">
-                    <a href="images/fulls/06.jpg" class="image fit thumb"><img class="images" src={pacmanImg} alt="" /></a>
-                    <h3>Pac-Man AI Search</h3>
-                    <p>Implementations of the depth-first, breadth-first, and A* search algorithms using the
-                        Pac-Man game to visualize the results. Python is used to write the program, and the assignment was
-                        originally adapted from <a href="http://ai.berkeley.edu/project_overview.html">UC Berkeley's Pacman AI projects</a>.
-                    </p>
-                </article>
-            </div>
-        </section>
+        <lightning-carousel disable-auto-scroll>
+            <lightning-carousel-image
+                src = {fitnessBuddyImg}
+                class = "images"
+                header = "Fitness Buddy"
+                description = "A fitness web application developed using NodeJS and Heroku.
+                                Key features include finding nearby gyms, nutrition
+                                facts, exercises search for different muscles, and a realtime
+                                chatroom."
+                alternative-text = "First card accessible description."
+                href = "https://ancient-sierra-47830.herokuapp.com">
+            </lightning-carousel-image>
+            <lightning-carousel-image
+                src = {voluntutorImg}
+                class = "images"
+                header = "Voluntutor"
+                description = "A tutoring web application which used AWS Elastic Beanstalk for deployment and was developed
+                                using Python with Django as the web framework. It also used Amazon RDS for PostgreSQL as the
+                                database engine and Amazon S3 cloud storage for static files."
+                alternative-text = "Second card accessible description."
+                href = "https://github.com/leeroygomos/voluntutor">
+            </lightning-carousel-image>
+            <lightning-carousel-image
+                src = {calcImg}
+                class = "images"
+                header = "Calculations App"
+                description = "A web application that calculates fibonacci, factorial, exponents, quadratic formula, and pythagorean
+                                theorem. It also does numeric conversions between decimal, hexadecimal, and binary. Developed using
+                                Django, C/C++, and Go."
+                alternative-text = "Third card accessible description."
+                href = "https://github.com/leeroygomos/calcapp">
+            </lightning-carousel-image>
+            <lightning-carousel-image
+                src = {satSolverImg}
+                class = "images"
+                header = "Satisfiability Problem Solver"
+                description = "A Python program that implements the DPLL algorithm to check
+                                the satisfiability of an expression in Conjunctive Normal Form (CNF).
+                                It may also print a list of true literals if the expression is satisfiable."
+                alternative-text = "Third card accessible description."
+                href = "javascript:void(0);">
+            </lightning-carousel-image>
+            <lightning-carousel-image
+                src = {shellImg}
+                class = "images"
+                header = "Basic Linux Shell"
+                description = "An implementation of the Linux shell using C with additional commands: !n, type, and history.
+                                The commands pwd, exit, and cd were also reimplemented."
+                href = "javascript:void(0);">
+            </lightning-carousel-image>
+            <lightning-carousel-image
+                src = {pacmanImg}
+                class = "images"
+                header = "Pac-man IA Search"
+                description = "Implementations of the depth-first, breadth-first, and A* search algorithms using the
+                                Pac-Man game to visualize the results. Python is used to write the program, and the assignment was
+                                originally adapted from UC Berkeley's Pacman AI projects"
+                alternative-text = "Third card accessible description."
+                href = "http://ai.berkeley.edu/project_overview.html">
+            </lightning-carousel-image>
+        </lightning-carousel>
     </div>
 </template>

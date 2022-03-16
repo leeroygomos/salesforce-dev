@@ -1,5 +1,6 @@
 import { LightningElement, api, track } from 'lwc';
-import BACKGROUND_IMG from '@salesforce/resourceUrl/portfoliobg';
+import PROFILE_PIC from '@salesforce/resourceUrl/profilepic';
+import PROFILE_PIC_V2 from '@salesforce/resourceUrl/profilepic';
 
 const sections = [
     {
@@ -37,6 +38,8 @@ export default class portfolio extends LightningElement {
     @track showContact = false;
     initiallySelected = 'about';
     navigationData = sections;
+    profilePic = PROFILE_PIC;
+    profilePic2 = PROFILE_PIC_V2;
 
     get backgroundStyle() {
         return `height:50rem;background-image:url(${BACKGROUND_IMG})`;

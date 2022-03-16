@@ -1,8 +1,8 @@
 <template>
     <div class="portfolio">
         <lightning-layout vertical-align="stretch">
-            <lightning-layout-item flexibility="auto, no-grow">
-                <div class="nav">
+            <lightning-layout-item>
+                <div class="nav slds-grid--vertical-stretch">
                     <lightning-vertical-navigation selected-item={initiallySelected} onselect={handleSelect}>
                         <template for:each={navigationData} for:item="section">
                             <lightning-vertical-navigation-section key={section.label} label={section.label}>
@@ -14,7 +14,7 @@
                     </lightning-vertical-navigation>
                 </div>
             </lightning-layout-item>
-            <lightning-layout-item flexibility="auto, stretch">
+            <lightning-layout-item>
                 <div class="content">
                     <template if:true={showAbout}>
                         <c-about-me></c-about-me>
