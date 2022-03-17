@@ -1,6 +1,6 @@
 import { LightningElement, api, track } from 'lwc';
 import PROFILE_PIC from '@salesforce/resourceUrl/profilepic';
-import PROFILE_PIC_V2 from '@salesforce/resourceUrl/profilepic';
+import PROFILE_PIC_V2 from '@salesforce/resourceUrl/profilepicv2';
 
 const sections = [
     {

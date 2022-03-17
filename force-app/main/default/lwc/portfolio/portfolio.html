@@ -1,6 +1,10 @@
 <template>
+    <header>
+        <h1>Main page heading here</h1>
+        <p>Posted by John Doe</p>
+    </header>
     <div class="portfolio">
-        <lightning-layout vertical-align="stretch">
+        <lightning-layout>
             <lightning-layout-item>
                 <div class="nav slds-grid--vertical-stretch">
                     <lightning-vertical-navigation selected-item={initiallySelected} onselect={handleSelect}>
@@ -35,4 +39,47 @@
             </lightning-layout-item>
         </lightning-layout>
     </div>
+    <footer>
+        <p>Author: Hege Refsnes</p>
+        <p><a href="mailto:hege@example.com">hege@example.com</a></p>
+      </footer>
 </template>
+
+<!-- <template>
+    <div class="portfolio">
+        <lightning-layout>
+            <lightning-layout-item>
+                <div class="nav slds-grid--vertical-stretch">
+                    <lightning-vertical-navigation selected-item={initiallySelected} onselect={handleSelect}>
+                        <template for:each={navigationData} for:item="section">
+                            <lightning-vertical-navigation-section key={section.label} label={section.label}>
+                                <template for:each={section.items} for:item="item">
+                                    <lightning-vertical-navigation-item key={item.name} label={item.label} name={item.name}></lightning-vertical-navigation-item>
+                                </template>
+                            </lightning-vertical-navigation-section>
+                        </template>
+                    </lightning-vertical-navigation>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <div class="content">
+                    <template if:true={showAbout}>
+                        <c-about-me></c-about-me>
+                    </template>
+                    <template if:true={showProjects}>
+                        <c-projects></c-projects>
+                    </template>
+                    <template if:true={showExperience}>
+                        <c-experience></c-experience>
+                    </template>
+                    <template if:true={showSkills}>
+                        <c-skills-certifications></c-skills-certifications>
+                    </template>
+                    <template if:true={showContact}>
+                        <c-contact-me></c-contact-me>
+                    </template>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template> -->
